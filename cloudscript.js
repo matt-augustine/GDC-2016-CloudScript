@@ -9,7 +9,7 @@ handlers.getUserInternalData = function(args)
     return { PlayerId: currentPlayerId, RandomString: args.RandomString, RandomNumber: args.RandomNumber, PlayerData: playerInternalData.Data['test-key']  };
 }
 
-
+// Call from CloudScript action
 handlers.handlePlayStreamEvent = function (args, context) {
     var psEvent = context.playStreamEvent;
     var profile = context.playerProfile;
