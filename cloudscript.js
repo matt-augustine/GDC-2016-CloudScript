@@ -15,3 +15,12 @@ handlers.handlePlayStreamEvent = function (args, context) {
     var profile = context.playerProfile;
     return { eventName: psEvent.EventName, profileDispName: profile.DisplayName };
 }
+
+handlers.levelUpPlayer = function (args, context) {
+	var playerStatResult = server.updateUserStatistics (
+		{
+			PlayFabId: currentPlayerId,
+			UserStatistics: {Level:2}
+		}
+	);
+}
