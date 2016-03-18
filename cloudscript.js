@@ -17,7 +17,7 @@ handlers.handlePlayStreamEvent = function (args, context) {
 }
 
 handlers.levelUpPlayer = function (args, context) {
-	var playerStatResult = server.updateUserStatistics (
+	var playerStatResult = server.UpdateUserStatistics (
 		{
 			PlayFabId: currentPlayerId,
 			UserStatistics: {Level:2}
