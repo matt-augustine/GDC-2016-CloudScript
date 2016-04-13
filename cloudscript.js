@@ -34,6 +34,7 @@ handlers.onStatChange = function (args, context) {
   log.debug('psEvent.PreviousStatisticValue: ' + psEvent.PreviousStatisticValue);
   log.debug('profile.PlayerId: ' + profile.PlayerId);
   log.debug('currentPlayerId: ' + currentPlayerId);
+  log.debug('playStreamEvent: ' + JSON.stringify(psEvent))
   //server.AddUserVirtualCurrency(profile.PlayerId,"Gm",gmCount);
   return { "foo ": "bar" };
 }
