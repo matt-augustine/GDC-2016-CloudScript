@@ -24,3 +24,16 @@ handlers.levelUpPlayer = function (args, context) {
 		}
 	);
 }// hello GDC
+
+handlers.onStatChange = function (args, context) {
+  var psEvent = context.playStreamEvent;
+  var profile = context.playerProfile;
+  var gmCount = psEvent.StatisticValue;
+  log.debug('psEvent.StatisticName: ' + psEvent.StatisticName);
+  log.debug('psEvent.StatisticValue: ' + psEvent.StatisticValue);
+  log.debug('psEvent.PreviousStatisticValue: ' + psEvent.PreviousStatisticValue);
+  log.debug('profile.PlayerId: ' + profile.PlayerId);
+  log.debug('currentPlayerId: ' + currentPlayerId);
+  server.AddUserVirtualCurrency(profile.PlayerId,"Gm",gmCount);
+  return { "foo ": "bar" };
+}
