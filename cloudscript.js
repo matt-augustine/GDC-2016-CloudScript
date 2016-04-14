@@ -1,21 +1,3 @@
-handlers.getUserInternalData = function(args)
-{
-    var playerInternalData = server.GetUserInternalData(
-	{
-		PlayFabId: currentPlayerId,
-		Keys: ['test-key']
-	});
-
-    return { PlayerId: currentPlayerId, RandomString: args.RandomString, RandomNumber: args.RandomNumber, PlayerData: playerInternalData.Data['test-key']  };
-}
-
-// Call from CloudScript action
-handlers.handlePlayStreamEvent = function (args, context) {
-    var psEvent = context.playStreamEvent;
-    var profile = context.playerProfile;
-    return { eventName: psEvent.EventName, profileDispName: profile.DisplayName };
-}
-
 handlers.levelUpPlayer = function (args, context) {
 	var playerStatResult = server.UpdateUserStatistics (
 		{
@@ -23,20 +5,6 @@ handlers.levelUpPlayer = function (args, context) {
 			UserStatistics: {Level:2}
 		}
 	);
-}// hello GDC
-
-handlers.onStatChange = function (args, context) {
-  var psEvent = context.playStreamEvent;
-  var profile = context.playerProfile;
-  var gmCount = psEvent.StatisticValue;
-  log.debug('psEvent.StatisticName: ' + psEvent.StatisticName);
-  log.debug('psEvent.StatisticValue: ' + psEvent.StatisticValue);
-  log.debug('psEvent.PreviousStatisticValue: ' + psEvent.PreviousStatisticValue);
-  log.debug('profile.PlayerId: ' + profile.PlayerId);
-  log.debug('currentPlayerId: ' + currentPlayerId);
-  log.debug('playStreamEvent: ' + JSON.stringify(psEvent))
-  //server.AddUserVirtualCurrency(profile.PlayerId,"Gm",gmCount);
-  return { "foo ": "bar" };
 }
 
 handlers.unlockHighSkillContent = function(args, context)
