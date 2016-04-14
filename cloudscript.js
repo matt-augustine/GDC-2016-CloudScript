@@ -46,7 +46,7 @@ handlers.unlockHighSkillContent = function(args, context)
 		PlayFabId: currentPlayerId,
 		"Data": {
 		    "HighSkillContent": true,
-		    "XPAtHighSkillUnlock": context.psEvent.StatisticValue
+		    "XPAtHighSkillUnlock": context.playStreamEvent.StatisticValue
 		  }
 	});
 
