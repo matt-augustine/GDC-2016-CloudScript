@@ -38,3 +38,17 @@ handlers.onStatChange = function (args, context) {
   //server.AddUserVirtualCurrency(profile.PlayerId,"Gm",gmCount);
   return { "foo ": "bar" };
 }
+
+handlers.unlockHighSkillContent = function(args, context)
+{
+    var playerInternalData = server.UpdateUserInternalData(
+	{
+		PlayFabId: currentPlayerId,
+		"Data": {
+		    "HighSkillContent": true,
+		    "XPAtHighSkillUnlock": context.psEvent.StatisticValue
+		  }
+	});
+
+    log.info('Unlocked HighSkillContent for ' + context.playerProfile.DisplayName);
+}
