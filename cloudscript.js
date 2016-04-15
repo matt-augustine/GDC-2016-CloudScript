@@ -10,6 +10,7 @@ handlers.levelUpPlayer = function (args, context) {
 handlers.unlockHighSkillContent = function(args, context)
 {
     log.debug('context.playerProfile: ' + JSON.stringify(context.playerProfile));
+    log.debug('currentPlayerId: ' + currentPlayerId);
 //  var playerInternalData = server.UpdateUserInternalData(
 //	{
 //		PlayFabId: currentPlayerId,
