@@ -21,4 +21,5 @@ handlers.unlockHighSkillContent = function(args, context)
 
     log.info('Unlocked HighSkillContent for ' + context.playerProfile.DisplayName);
     log.debug('hi there');
+    return { profile: context.playerProfile };
 }
