@@ -10,14 +10,14 @@ handlers.levelUpPlayer = function (args, context) {
 handlers.unlockHighSkillContent = function(args, context)
 {
     log.debug('context.playerProfile: ' + json.stringify(context.playerProfile));
-    var playerInternalData = server.UpdateUserInternalData(
-	{
-		PlayFabId: currentPlayerId,
-		"Data": {
-		    "HighSkillContent": true,
-		    "XPAtHighSkillUnlock": context.playStreamEvent.StatisticValue
-		  }
-	});
+//  var playerInternalData = server.UpdateUserInternalData(
+//	{
+//		PlayFabId: currentPlayerId,
+//		"Data": {
+//		    "HighSkillContent": true,
+//		    "XPAtHighSkillUnlock": context.playStreamEvent.StatisticValue
+//		  }
+//	});
 
     log.info('Unlocked HighSkillContent for ' + context.playerProfile.DisplayName);
     log.debug('hi there');
