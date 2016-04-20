@@ -45,6 +45,6 @@ handlers.processChatMessage = function (args, context) {
 
     var content = JSON.stringify(body);
     
-    var response = http.request(languageFilterUrl, "post", "application/json", content, headers, true);
+    var response = http.request(languageFilterUrl, "post", content, "application/json", headers, true);
     log.debug('received: ' + response);
 }
