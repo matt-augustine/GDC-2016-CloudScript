@@ -28,11 +28,11 @@ handlers.unlockHighSkillContent = function(args, context)
 handlers.processPlayerSentChatMessage = function (args, context) {
 	
 	
-    //var languageFilterUrl = "https://plavx7r2.pottymouthfilter.com/v1/chat";
-    var languageFilterUrl = "http://httpbin.org/status/200";
+    var languageFilterUrl = "https://plavx7r2.pottymouthfilter.com/v1/chat";
+    //var languageFilterUrl = "http://httpbin.org/status/200";
     
     var headers = {
-    	"Authorization": "Basic ReplaceMe"
+    	"Authorization": "Basic OmZvWm9KWDhUOWNSekJzTWJTUThN"
     };
     
     var body = {
