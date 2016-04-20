@@ -25,7 +25,34 @@ handlers.unlockHighSkillContent = function(args, context)
     return { profile: context.playerProfile };
 }
 
-handlers.processChatMessage = function (args, context) {
+handlers.processPlayerSentChatMessage = function (args, context) {
+	
+	
+    //var languageFilterUrl = "https://plavx7r2.pottymouthfilter.com/v1/chat";
+    var languageFilterUrl = "http://httpbin.org/status/200";
+    
+    var headers = {
+    	"Authorization": "Basic ReplaceMe"
+    };
+    
+    var body = {
+    	rule: 1,
+    	player: context.playerProfile.EntityId,
+    	player_display_name: context.playerProfile.DisplayName,
+    	room: context.playStreamEvent.room,
+    	server: context.playStreamEvent.server,
+    	language: context.playStreamEvent.language,
+    	text: context.playStreamEvent.text
+    };
+
+    var content = JSON.stringify(body);
+    
+    var response = http.request(languageFilterUrl, "post", content, "application/json", headers, true);
+    log.debug('received: ' + response);
+}
+
+handlers.playerSentMessage = function (args, context) {
+
     //var languageFilterUrl = "https://plavx7r2.pottymouthfilter.com/v1/chat";
     var languageFilterUrl = "http://httpbin.org/status/200";
     
@@ -37,9 +64,9 @@ handlers.processChatMessage = function (args, context) {
     	rule: 1,
     	player: context.playerProfile.EntityId,
     	player_display_name: context.playerProfile.DisplayName,
-    	room: context.playStreamEvent.room,
-    	server: context.playStreamEvent.server,
-    	language: context.playStreamEvent.language,
+    	room: "Lobby",
+    	server: "Gamma",
+    	language: "en",
     	text: context.playStreamEvent.text
     };
 
