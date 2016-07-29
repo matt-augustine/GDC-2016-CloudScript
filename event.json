@@ -1,0 +1,19 @@
+{
+    "EventName": "player_statistic_changed",
+    "StatisticName": "Total_BossesKilled",
+    "StatisticId": 1212500867,
+    "Version": 2,
+    "StatisticValue": 1,
+    "StatisticPreviousValue": 1,
+    "EventNamespace": "com.playfab",
+    "EntityType": "player",
+    "Source": "PlayFab",
+    "TitleId": "58DD",
+    "EventId": "68d5715f64cd46058f84277914e1b17f",
+    "EntityId": "E1CBC4972C82C9E5",
+    "SourceType": "BackEnd",
+    "Timestamp": "2016-07-28T23:33:12.0528403Z",
+    "History": null,
+    "CustomTags": null,
+    "Reserved": null
+}
