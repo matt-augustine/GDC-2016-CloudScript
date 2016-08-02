@@ -95,20 +95,11 @@ handlers.makeHTTPTimeoutRequest = function (args, context) {
     var headers = {
     	"X-MyCustomHeader": "Some Value"
     };
-    
-    var body = {
-    	input: args,
-    	userId: currentPlayerId,
-    	mode: "foobar"
-    };
 
      var url = "http://httpbin.org/delay/12";
-    var content = JSON.stringify(body);
-    var httpMethod = "post";
-    var contentType = "application/json";
     var logRequestAndResponse = true;
     // The pre-defined http object makes synchronous HTTP requests
-    var response = http.request(url, httpMethod, content, contentType, headers, logRequestAndResponse);
+    var response = http.request(url, null, null, null, null, logRequestAndResponse);
     return { responseContent: response };
 }
 
