@@ -315,6 +315,31 @@ handlers.userReadOnlyTest = function (args, context) {
     log.info("Father " + args.Father);
     
     var writeToServer = {};
+    writeToServer["SaveState"] = previousState; // pseudo Code showing that the previous state is updated to the current state
+    
+    var result = server.UpdateUserReadOnlyData({"PlayFabId" : currentPlayerId, "Data" : writeToServer, "Permission":"Public" });
+    return result;
+}
+
+handlers.userReadOnlyTest2 = function (args, context) {
+    var currentState; // here we are calculating the current player's game state
+    
+    // here we are fetching the "SaveState" key from PlayFab,
+    var playerData = server.GetUserReadOnlyData({"PlayFabId" : currentPlayerId, "Keys" : ["SaveState"]});
+    var previousState = {}; //if we return a matching key-value pair, then we can proceed otherwise we will need to create a new record.
+    
+    if(playerData.Data.hasOwnProperty("SaveState"))
+    {
+        previousState = playerData.Data["SaveState"];
+    }
+    
+    previousState["Mother"] = args.Mother;
+    previousState["Father"] = args.Father;
+    
+    log.info("Mother " + args.Mother);
+    log.info("Father " + args.Father);
+    
+    var writeToServer = {};
     //writeToServer["SaveState"] = previousState; // pseudo Code showing that the previous state is updated to the current state
     writeToServer["SaveState"] = JSON.stringify(previousState);
     
