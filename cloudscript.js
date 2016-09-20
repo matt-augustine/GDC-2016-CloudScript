@@ -315,7 +315,8 @@ handlers.userReadOnlyTest = function (args, context) {
     log.info("Father " + args.Father);
     
     var writeToServer = {};
-    writeToServer["SaveState"] = previousState; // pseudo Code showing that the previous state is updated to the current state
+    //writeToServer["SaveState"] = previousState; // pseudo Code showing that the previous state is updated to the current state
+    writeToServer["SaveState"] = JSON.stringify(previousState);
     
     var result = server.UpdateUserReadOnlyData({"PlayFabId" : currentPlayerId, "Data" : writeToServer, "Permission":"Public" });
     return result;
