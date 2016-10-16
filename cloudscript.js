@@ -32,7 +32,7 @@
 // This is a Cloud Script handler function. args is the object passed-in to ExecuteCloudScript API.
 // (https://api.playfab.com/Documentation/Client/method/ExecuteCloudScript)
 // context contains additional information when the Cloud Script is called from a PlayStream action.
-handlers.helloWorld = function (args, context) {
+handlers.helloWorld = function (args, context) { 
     
     // The pre-defined "currentPlayerId" variable is initialized to the PlayFab ID of the player logged-in on the game client. 
     // Cloud Script handles authenticating the player automatically.
