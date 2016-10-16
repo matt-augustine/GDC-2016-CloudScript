@@ -38,7 +38,7 @@ handlers.helloWorld = function (args, context) {
     // Cloud Script handles authenticating the player automatically.
     // "args" is set to the value of the "FunctionParameter" field of the object passed in to 
     // ExecuteCloudScript from the client.
-    var message = "Hello " + currentPlayerId + "! You said " + args.inputValue;
+    var message = "Hello! You said " + args.inputValue;
 
     // You can use the "log" object to write out debugging statements. The "log" object has
     // three functions corresponding to logging level: debug, info, and error. These functions
