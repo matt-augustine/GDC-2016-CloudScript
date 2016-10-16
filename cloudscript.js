@@ -39,7 +39,7 @@ handlers.helloWorld = function (args, context) {
     // "args" is set to the value of the "FunctionParameter" field of the object passed in to 
     // ExecuteCloudScript from the client.
 	var schedtaskargs = JSON.parse(args);
-    var message = "Hello! You said " + schedtaskargs.inputValue;
+    var message = "Hello! You said " + schedtaskargs.inputvalue;
 
     // You can use the "log" object to write out debugging statements. The "log" object has
     // three functions corresponding to logging level: debug, info, and error. These functions
