@@ -55,6 +55,10 @@ handlers.helloWorld = function (args, context) {
     return { messageValue: message };
 }
 
+handlers.onLogin = function (args, context) { 
+    log.info('location is ' + JSON.stringify(context));
+}
+
 // This is a simple example of making a PlayFab server API call
 handlers.makeAPICall = function (args, context) {
     
