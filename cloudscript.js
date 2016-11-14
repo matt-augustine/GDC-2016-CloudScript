@@ -56,7 +56,17 @@ handlers.helloWorld = function (args, context) {
 }
 
 handlers.onLogin = function (args, context) { 
-    log.info('location is ' + JSON.stringify(context));
+    	var location = context.playerProfile.Locations["LastLogin"];
+	var country = location.CountryCode;
+	var continent = location.ContinentCode;
+	var city = location.City;
+	var latitude = location.Latitude;
+	var longitude = location.Longitude;
+    	log.info('location:' + JSON.stringify(location));
+	log.info('continent:' + continent);
+	log.info('country:' + country);
+	log.info('latitude:' + latitude);
+	log.info('longitude:' + longitude);
 }
 
 // This is a simple example of making a PlayFab server API call
